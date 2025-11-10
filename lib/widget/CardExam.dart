@@ -9,6 +9,7 @@ class CardExam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: exam.dateTime.isAfter(DateTime.now())? Colors.green[100]: Colors.red[100],
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () => print("Not ready yet bro"),
