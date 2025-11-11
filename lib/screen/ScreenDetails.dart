@@ -57,7 +57,7 @@ class _ScreenDetailsState extends State<ScreenDetails> {
               if (duration.isNegative)
                 Text("Exam has already passed", style: TextStyle(fontSize: 24, color: Colors.red),)
               else
-                Text("${duration.inDays} days left", style: TextStyle(fontSize: 24, color: Colors.green),),
+                Text("${duration.inDays} days, ${duration.inHours % 24} hours left", style: TextStyle(fontSize: 24, color: Colors.green),),
             ],
           ),
         ),

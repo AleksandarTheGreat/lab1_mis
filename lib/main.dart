@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       rooms: ["Lab 200 AB", "Lab 200 V"],
     ),
     Exam(
-      name: "Opreativni Sistemi",
+      name: "Operativni Sistemi",
       dateTime: DateTime(2025, 11, 5, 14, 30),
       rooms: ["Lab 118", "Lab 200 V", "Lab 200 AB"],
     ),
@@ -104,22 +104,45 @@ class _MyAppState extends State<MyApp> {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: (exams..sort((a, b) => a.dateTime.compareTo(b.dateTime)))
-                .map(
-                  (exam) => CardExam(
-                    exam: exam,
-                    onTapAction: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ScreenDetails(exam: exam),
-                        ),
-                      );
-                    },
+            children: [
+              ...(exams..sort((a, b) => a.dateTime.compareTo(b.dateTime)))
+                  .map(
+                    (exam) => CardExam(
+                      exam: exam,
+                      onTapAction: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ScreenDetails(exam: exam),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                  .toList(),
+              SizedBox(height: 12,),
+              Stack(
+                children: [
+                  Icon(Icons.sticky_note_2_outlined, size: 32),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '${exams.length}',
+                        style: TextStyle(fontSize: 10, color: Colors.white),
+                      ),
+                    ),
                   ),
-                )
-                .toList(),
+                ],
+              ),
+              SizedBox(height: 12,),
+            ],
           ),
         ),
       ),
