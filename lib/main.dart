@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab1_mis/model/Exam.dart';
+import 'package:lab1_mis/screen/ScreenDetails.dart';
 import 'package:lab1_mis/widget/CardExam.dart';
 
 void main() {
@@ -104,9 +105,20 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: (exams
-                ..sort((a, b) => a.dateTime.compareTo(b.dateTime)))
-                .map((exam) => CardExam(exam: exam))
+            children: (exams..sort((a, b) => a.dateTime.compareTo(b.dateTime)))
+                .map(
+                  (exam) => CardExam(
+                    exam: exam,
+                    onTapAction: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ScreenDetails(exam: exam),
+                        ),
+                      );
+                    },
+                  ),
+                )
                 .toList(),
           ),
         ),
