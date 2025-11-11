@@ -1,16 +1,20 @@
 # lab1_mis
 
-A new Flutter project.
+Ova e prvata laboratoriska vezhba.
 
-## Getting Started
+## Screenshots od app
 
-This project is a starting point for a Flutter application.
+Screenshot 1:
+![Alt text](screenshots/ss1.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+Screenshot 2:
+![Alt text](screenshots/ss2.jpg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Screenshot 3:
+![Alt text](screenshots/ss3.jpg)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Screenshot 4:
+![Alt text](screenshots/ss4.jpg)
+
+Screenshot 5:
+![Alt text](screenshots/ss5.jpg)
